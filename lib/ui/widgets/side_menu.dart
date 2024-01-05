@@ -1,6 +1,9 @@
 import 'package:bank_dashboard/ui/shared/colors.dart';
 import 'package:bank_dashboard/ui/shared/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+// import mainviewmodel.dart
+import 'package:bank_dashboard/views/main/main_viewmodel.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -17,12 +20,12 @@ class SideMenu extends StatelessWidget {
             child: Row(
               children: [
                 const Icon(
-                  Icons.add_box,
+                  Icons.account_balance_rounded,
                   color: kBlackColor,
                 ),
                 Expanded(
                   child: Text(
-                    'magicBank',
+                    'Transactions Detective',
                     style: kHeading3TextStyle,
                   ),
                 )
@@ -30,32 +33,41 @@ class SideMenu extends StatelessWidget {
             ),
           ),
           DrawerListTile(
-            title: "Home",
+            title: "  Home",
             icon: Icons.home,
+            press: () {
+              // on press execute function onHomeButtonClicked() from MainViewModel
+              Provider.of<MainViewModel>(context, listen: false)
+                  .onHomeButtonClicked();
+            },
+          ),
+          DrawerListTile(
+            title: "  Import Data (CSV)",
+            icon: Icons.add_chart,
             press: () {},
           ),
           DrawerListTile(
-            title: "Cards",
+            title: "  Cards",
             icon: Icons.card_giftcard,
             press: () {},
           ),
           DrawerListTile(
-            title: "Transaction",
+            title: "  Transaction",
             icon: Icons.transform,
             press: () {},
           ),
           DrawerListTile(
-            title: "Statistics",
+            title: "  Statistics",
             icon: Icons.calculate,
             press: () {},
           ),
           DrawerListTile(
-            title: "Settings",
+            title: "  Settings",
             icon: Icons.settings,
             press: () {},
           ),
           DrawerListTile(
-            title: "Logout",
+            title: "  Logout",
             icon: Icons.logout,
             press: () {},
           ),

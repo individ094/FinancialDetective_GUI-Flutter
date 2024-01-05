@@ -21,6 +21,11 @@ class MyApp extends StatelessWidget {
             .apply(bodyColor: Colors.white),
         canvasColor: kSecondaryColor2,
       ),
+      initialRoute: '/home',
+      routes: {
+        '/home': (context) => const MainView(),
+        //'/ImportData': (context) => const ImportDataView(),
+      },
       home: const MainView(),
     );
   }
