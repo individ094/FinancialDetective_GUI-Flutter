@@ -2,6 +2,7 @@ import 'package:bank_dashboard/ui/shared/colors.dart';
 import 'package:bank_dashboard/views/main/main_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:bank_dashboard/views/import_data/import_data_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/home',
       routes: {
         '/home': (context) => const MainView(),
-        //'/ImportData': (context) => const ImportDataView(),
+        '/ImportData': (context) => const ImportDataView(),
       },
       home: const MainView(),
     );
