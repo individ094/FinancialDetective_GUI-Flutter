@@ -36,15 +36,25 @@ class SideMenu extends StatelessWidget {
             title: "  Home",
             icon: Icons.home,
             press: () {
-              // on press execute function onHomeButtonClicked() from MainViewModel
-              Provider.of<MainViewModel>(context, listen: false)
-                  .onHomeButtonClicked();
+              if (ModalRoute.of(context)?.settings.name != '/home') {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/home');
+              } else {
+                Navigator.pop(context);
+              }
             },
           ),
           DrawerListTile(
             title: "  Import Data (CSV)",
             icon: Icons.add_chart,
-            press: () {},
+            press: () {
+              if (ModalRoute.of(context)?.settings.name != '/ImportData') {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/ImportData');
+              } else {
+                Navigator.pop(context);
+              }
+            },
           ),
           DrawerListTile(
             title: "  Cards",
