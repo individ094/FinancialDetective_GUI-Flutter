@@ -28,18 +28,5 @@ class MainViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void onHomeButtonClicked() {
-    // Get the current route.
-    final currentRoute = ModalRoute.of(_scaffoldKey.currentContext!)?.settings.name;
-
-    // Close the drawer.
-    if (_scaffoldKey.currentState!.isDrawerOpen) {
-      _scaffoldKey.currentState!.openEndDrawer();
-    }
-
-    // If the current route is not the home route, navigate to the home route.
-    if (currentRoute != '/home') {
-      Navigator.of(_scaffoldKey.currentContext!).pushNamed('/home');
-    }
-  }
+  
 }
