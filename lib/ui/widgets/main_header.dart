@@ -31,7 +31,7 @@ class MainHeader extends ViewModelWidget<MainViewModel> {
               style: kBodyRegularTextStyle,
             ),
             Text(
-              'Ayomide Ajibade',
+              'Detective',
               style: kHeading3TextStyle,
             ),
           ],
